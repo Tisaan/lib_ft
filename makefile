@@ -1,0 +1,1 @@
+SRCS = ft_isalnum.c, ft_isalpha.c, ft_isdigits.c
