@@ -6,7 +6,7 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 12:17:41 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/15 12:24:47 by tseche           ###   ########.fr       */
+/*   Updated: 2025/10/15 16:47:18 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 size_t	ft_strgetindex(char *s, char *pos)
 {
 	size_t	i;
-	
+
 	i = 0;
 	while (s != pos && s++ && i++)
 		;

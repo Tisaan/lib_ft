@@ -11,4 +11,5 @@
   - ### Faire les test
   - faire bonus
   - ### Faire les test
-  - ##Ajouter les description
+  - ## Ajouter les description
+  - ## Ajouter les bonus perso dans makefile

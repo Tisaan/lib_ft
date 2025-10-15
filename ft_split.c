@@ -6,7 +6,7 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 20:36:17 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/15 16:13:54 by tseche           ###   ########.fr       */
+/*   Updated: 2025/10/15 16:44:15 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	**ft_split(char const *s, char c)
 	size_t	index;
 	size_t	i;
 	size_t	j;
-	
+
 	arr = (char **)malloc(sizeof(char *) * (ft_strnocc(s, c) + 1));
 	if (!arr)
 		return (NULL);
@@ -34,7 +34,7 @@ char	**ft_split(char const *s, char c)
 			ft_freeptr(arr);
 			return (NULL);
 		}
-		s += (j = (ft_strchr(s[i + j], c) - s));
+		s += (j + (ft_strchr(s[i + j], c) - s));
 	}
 	*arr = "\0";
 	return (arr);
