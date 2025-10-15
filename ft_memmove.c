@@ -1,16 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tseche <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 16:37:48 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/13 16:37:50 by tseche           ###   ########.fr       */
+/*   Created: 2025/10/13 23:41:03 by tseche            #+#    #+#             */
+/*   Updated: 2025/10/15 15:49:29 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include "libft.h"
+
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	return (!(c & 0X80));
+	if (dest > (unsigned char *)src && dest <= ((unsigned char *)src + n))
+		return (ft_memcpyrev(dest, src, n));
+	return (ft_memcpy(dest, src, n));
 }

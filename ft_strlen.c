@@ -9,14 +9,13 @@
 /*   Updated: 2025/10/13 17:13:25 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *src)
 {
 	char	*sc;
 
-	sc = src;
+	sc = (char *)src;
 	while (*src)
 		src++;
 	return (src - sc);

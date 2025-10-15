@@ -1,16 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strgetindex.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tseche <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 16:37:48 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/13 16:37:50 by tseche           ###   ########.fr       */
+/*   Created: 2025/10/15 12:17:41 by tseche            #+#    #+#             */
+/*   Updated: 2025/10/15 12:24:47 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include "libft.h"
+
+size_t	ft_strgetindex(char *s, char *pos)
 {
-	return (!(c & 0X80));
+	size_t	i;
+	
+	i = 0;
+	while (s != pos && s++ && i++)
+		;
+	if (!*s)
+		return (NULL);
+	return (i);
 }

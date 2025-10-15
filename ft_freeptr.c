@@ -1,16 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_freeptr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tseche <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 16:37:48 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/13 16:37:50 by tseche           ###   ########.fr       */
+/*   Created: 2025/10/15 12:09:06 by tseche            #+#    #+#             */
+/*   Updated: 2025/10/15 12:21:32 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include "libft.h"
+
+void	ft_freeptr(void **ptr)
 {
-	return (!(c & 0X80));
+	while (*(unsigned char **)ptr)
+		free(*(unsigned char **)ptr++);
+	free(ptr);
 }

@@ -1,16 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strnlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tseche <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 16:37:48 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/13 16:37:50 by tseche           ###   ########.fr       */
+/*   Created: 2025/10/14 14:55:58 by tseche            #+#    #+#             */
+/*   Updated: 2025/10/14 14:56:01 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-int	ft_isascii(int c)
+size_t	ft_strnlen(const char *src, size_t maxlen)
 {
-	return (!(c & 0X80));
+	char	*sc;
+
+	sc = (char *)src;
+	while (*src && (src - sc) <= maxlen)
+		src++;
+	return (src - sc);
 }

@@ -1,16 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tseche <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 16:37:48 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/13 16:37:50 by tseche           ###   ########.fr       */
+/*   Created: 2025/10/14 21:48:31 by tseche            #+#    #+#             */
+/*   Updated: 2025/10/15 11:52:23 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include "libft.h"
+
+char	*ft_strndup(const char *s, size_t n)
 {
-	return (!(c & 0X80));
+	char	*ptr;
+
+	ptr = (char *)malloc(sizeof(char) * n);
+	if (!ptr)
+		return (NULL);
+	return (ft_strlcpy(ptr, s, n));
 }

@@ -1,16 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strnocc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tseche <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 16:37:48 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/13 16:37:50 by tseche           ###   ########.fr       */
+/*   Created: 2025/10/14 21:10:09 by tseche            #+#    #+#             */
+/*   Updated: 2025/10/15 15:56:52 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include "libft.h"
+
+size_t	ft_strnumocc(char *s, char c)
 {
-	return (!(c & 0X80));
+	size_t	count;
+	size_t	l;
+
+	l = ft_strlen(s);
+	count = 0;
+	s = 1;
+	while (s)
+	{	
+		s = ft_strnstr(s, c, l);
+		if (s)
+			++count;		
+	}
+	return (count);
 }

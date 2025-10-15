@@ -1,16 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_memcpyrev.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tseche <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 16:37:48 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/13 16:37:50 by tseche           ###   ########.fr       */
+/*   Created: 2025/10/14 15:00:14 by tseche            #+#    #+#             */
+/*   Updated: 2025/10/14 15:00:16 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-int	ft_isascii(int c)
+void	*ft_memcpyrev(void *dest, const void *src, size_t n)
 {
-	return (!(c & 0X80));
+	unsigned char	*ret;
+
+	ret = dest;
+	src += n;
+	while (n--)
+	{
+		*(unsigned char *)dest = *(unsigned char *)src;
+		++dest;
+		--src;
+	}
+	return ((void *)ret);
 }

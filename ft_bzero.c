@@ -9,16 +9,10 @@
 /*   Updated: 2025/10/13 17:44:58 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
+#include "libft.h"
 
-void	ft_memset(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	*tmp;
-
-	tmp = s;
-	while (*tmp && ((tmp - (unsigned char *)s) <= n))
-	{
-		*tmp++ = 0;
-	}
-	return (s);
+	while (*(unsigned char *)s && n--)
+		*(unsigned char *)s++ = 0;
 }
