@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tseche <marvin@42.fr>                      +#+  +:+       +#+         #
+#    By: tseche <tseche@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/13 23:39:11 by tseche            #+#    #+#              #
-#    Updated: 2025/10/13 23:39:14 by tseche           ###   ########.fr        #
+#    Updated: 2025/10/16 18:28:03 by tseche           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,11 +34,27 @@ SRCS = ft_isalnum.c \
 	ft_memchr.c \
 	ft_memcmp.c \
 	ft_strnstr.c \
-	ft_atoi.c
-
+	ft_atoi.c \
+	ft_calloc.c \
+	ft_strdup.c \
+	ft_substr.c \
+	ft_strjoin.c \
+	ft_split.c \
+	ft_memcpyrev.c \
+	ft_strnlen.c \
+	ft_strcpy.c \
+	ft_strtrim.c \
+	ft_isoneof.c \
+	ft_strnumocc.c \
+	ft_normalize.c \
+	ft_strndup.c \
+	ft_freeptr.c \
+	
 OBJS = $(SRCS:.c=.o)
 
-all: $(OBJS)
+all: $(NAME)
+
+$(NAME): $(OBJS)
 	ar crs $(NAME) $(OBJS)
 	
 %.o : %.c

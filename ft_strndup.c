@@ -6,7 +6,7 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 21:48:31 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/15 11:52:23 by tseche           ###   ########.fr       */
+/*   Updated: 2025/10/16 17:25:20 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@ char	*ft_strndup(const char *s, size_t n)
 	ptr = (char *)malloc(sizeof(char) * n);
 	if (!ptr)
 		return (NULL);
-	return (ft_strlcpy(ptr, s, n));
+	ft_strlcpy(ptr, s, n);
+	return (ptr);
 }

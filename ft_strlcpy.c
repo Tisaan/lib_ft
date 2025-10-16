@@ -6,7 +6,7 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 12:46:48 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/15 16:32:54 by tseche           ###   ########.fr       */
+/*   Updated: 2025/10/16 18:57:12 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	unsigned char	*tmp;
+	char	*tmp;
 
-	tmp = (unsigned char *)src;
-	while (*src && ((unsigned char *)src - tmp) <= size)
-		*(dst++) = *(src++);
+	tmp = dst;
+	if (!size--)
+		return (dst - tmp + ft_strlen(src));
+	while (*src && size && size--)
+		*dst++ = *src++;
 	*dst = '\0';
-	while (*(src++))
-		;
-	return ((unsigned char *)src - tmp);
+	return (dst - tmp + ft_strlen(src));
 }
