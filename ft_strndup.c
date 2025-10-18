@@ -6,15 +6,16 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 21:48:31 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/18 21:14:36 by tseche           ###   ########.fr       */
+/*   Updated: 2025/10/18 21:32:48 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 /*
-The  strndup()  function  is  similar,  but copies at most n bytes.  If s is
-       longer than n, only n bytes are copied, and a terminating null  byte  ('\0')
-       is added.
+The  strndup()  function  is  similar,  but copies at most n bytes.
+If s is longer than n,
+only n bytes are copied, and a terminating null  byte  ('\0')
+is added.
 */
 char	*ft_strndup(char *src, int start, int finish)
 {

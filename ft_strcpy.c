@@ -6,17 +6,16 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 19:17:54 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/18 21:19:11 by tseche           ###   ########.fr       */
+/*   Updated: 2025/10/18 21:43:43 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 /*
 The  strcpy()  function  copies  the string pointed to by src, including the
-       terminating null byte ('\0'), to the buffer pointed to by dest.  The strings
-       may not overlap, and the destination string dest must be large enough to re‐
-       ceive the copy.  Beware of buffer overruns!  (See BUGS.)
-
+terminating null byte ('\0'), to the buffer pointed to by dest.  The strings
+may not overlap, and the destination string dest must be large enough to re‐
+ceive the copy.  Beware of buffer overruns!  (See BUGS.)
 */
 char	*ft_strcpy(char *dst, const char *src, size_t size)
 {
