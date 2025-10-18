@@ -6,12 +6,15 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 15:18:50 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/18 16:12:34 by tseche           ###   ########.fr       */
+/*   Updated: 2025/10/18 21:10:34 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
+The strrchr() function returns a pointer to the last occurrence of the char‐
+       acter c in the string s.
+*/
 char	*ft_strrchr(const char *s, int c)
 {
 	char	*tmp;
@@ -26,10 +29,3 @@ char	*ft_strrchr(const char *s, int c)
 		return (NULL);
 	return ((char *)s);
 }
-
-// int main(){
-
-// 	char * tmp = ft_strrchr("teste", 0x65);
-// 	char * chose = ft_strrchr("teste", 0x0);
-// 	printf("%s\n%s", tmp, chose);
-// }

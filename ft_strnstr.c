@@ -6,16 +6,19 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 16:25:27 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/18 16:16:50 by tseche           ###   ########.fr       */
+/*   Updated: 2025/10/18 21:13:03 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// pos_poss_match:
-// sert a skip pour avoid des check redondant
-// egal a la prochaine apparition du
-// 1st char du substr
+/*
+The strnstr() function locates the first occurrence of the null-terminated
+     string little in the string big, where not more than len characters are
+     searched.  Characters that appear after a ‘\0’ character are not searched.
+     Since the strnstr() function is a FreeBSD specific API, it should only be used
+     when portability is not a concern.
+*/
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;

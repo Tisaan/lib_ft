@@ -6,12 +6,14 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 21:10:09 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/15 23:44:48 by tseche           ###   ########.fr       */
+/*   Updated: 2025/10/18 21:21:50 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
+get the number of occurence of c in s;
+*/
 size_t	ft_strnumocc(char *s, char c)
 {
 	size_t	count;

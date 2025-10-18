@@ -6,10 +6,14 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 17:04:15 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/15 21:49:51 by tseche           ###   ########.fr       */
+/*   Updated: 2025/10/18 21:05:09 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+/*
+checks for any printable character including space.
+*/
 int	ft_isprint(int c)
 {
 	return (((unsigned)c - ' ') < 0x5F);

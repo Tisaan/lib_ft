@@ -6,7 +6,7 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 12:23:15 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/18 20:12:22 by tseche           ###   ########.fr       */
+/*   Updated: 2025/10/18 21:18:03 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 
-int		ft_normalize(int n);
+int		ft_normalizenbr(int n);
 int		ft_isoneof(int c, char *set);
 
 void	ft_putendl_fd(char *s, int fd);
