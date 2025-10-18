@@ -6,55 +6,57 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 20:36:17 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/16 18:00:55 by tseche           ###   ########.fr       */
+/*   Updated: 2025/10/18 16:08:10 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_split(char const *s, char c)
+static int	count_words(char *str, char charset)
 {
-	char	**arr;
-	size_t	index_find;
+	int	i;
+	int	count;
 
-	if (!s || !*s || !c)
-	 	return (NULL);
-	arr = malloc(sizeof(char *) * ft_strnumocc((char *)s, c));
-	index_find = ft_strchr(s, c) - s;
-	if (!index_find)
+	i = -1;
+	count = 0;
+	while (str[++i])
 	{
-		*arr = ft_strdup(s);
-		if (!arr)
-			return (NULL);
-		*++arr = 0;
-		return (arr);
-	}
-	while (s)
-	{
-		index_find = ft_strchr(s, c) - s;
-		if (!index_find)
+		while (str[i] == charset)
+			i++;
+		if (!str[i])
 			break ;
-		*arr = ft_strndup(s, index_find);
-		if (!*arr++)
-		{
-			ft_freeptr((void **)arr);
-			return (NULL);
-		}
-		s += index_find;
+		while (str[i] != charset && str[i])
+			i++;
+		++count;
 	}
-	*arr = "\0";
-	return (arr);
+	return (count);
 }
 
-int main()
+char	**ft_split(char const *str, char charset)
 {
-	char *string = "      split       this for   me  !       ";
-	char **expected = ((char*[6]){"split", "this", "for", "me", "!", ((void*)0)});
-	char **result = ft_split(string, ' ');
-	for (int i = 0; expected[i]; i++)
-	{
-		printf("Expected: %s, ", expected[i]);
-		printf("Got: %s\n", result[i]);
-	}
+	char	**split;
+	int		start;
+	int		size;
+	int		j;
+	int		i;
 
+	i = -1;
+	j = 0;
+	size = count_words((char *)str, charset);
+	split = (char **)ft_calloc(size + 1, sizeof(char *));
+	if (!split)
+		return (NULL);
+	start = 0;
+	while (str[++i])
+	{
+		if (str[i] != charset && (i == 0 || str[i - 1] == charset))
+			start = i;
+		if (str[i] != charset && (str[i + 1] == charset || !str[i + 1]))
+		{
+			split[j] = ft_strndup((char *)str, start, i);
+			j++;
+		}
+	}
+	split[j] = NULL;
+	return (split);
 }

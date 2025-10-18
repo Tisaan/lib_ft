@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_normalize.c                                     :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/16 16:27:22 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/18 16:18:06 by tseche           ###   ########.fr       */
+/*   Created: 2025/10/17 23:43:16 by tseche            #+#    #+#             */
+/*   Updated: 2025/10/18 16:04:10 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_normalize(int n)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	if (n < 0)
-		return (-n);
-	return (n);
+	size_t	i;
+
+	i = 0;
+	while (*s)
+		(*f)(i++, s++);
+	*s = 0;
 }

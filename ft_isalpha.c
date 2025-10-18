@@ -6,12 +6,12 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 16:23:21 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/15 19:15:13 by tseche           ###   ########.fr       */
+/*   Updated: 2025/10/18 16:03:07 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalpha(int c)
 {
-	return ((c >= (int)'A' && c <= (int)'Z') 
-			|| (c >= (int)'a' && c <= (int)'z'));
+	return ((c >= (int) 'A' && c <= (int) 'Z')
+		|| (c >= (int) 'a' && c <= (int) 'z'));
 }

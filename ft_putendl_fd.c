@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_normalize.c                                     :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/16 16:27:22 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/18 16:18:06 by tseche           ###   ########.fr       */
+/*   Created: 2025/10/18 00:05:27 by tseche            #+#    #+#             */
+/*   Updated: 2025/10/18 16:04:25 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_normalize(int n)
+void	ft_putendl_fd(char *s, int fd)
 {
-	if (n < 0)
-		return (-n);
-	return (n);
+	while (*s)
+		write(fd, s++, 1);
+	write(fd, "\n", 1);
 }

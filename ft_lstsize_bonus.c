@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_normalize.c                                     :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/16 16:27:22 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/18 16:18:06 by tseche           ###   ########.fr       */
+/*   Created: 2025/10/18 17:00:15 by tseche            #+#    #+#             */
+/*   Updated: 2025/10/18 17:02:23 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_normalize(int n)
+int ft_lstsize(t_list *lst)
 {
-	if (n < 0)
-		return (-n);
-	return (n);
+	int	size;
+
+	size = 0;
+	while (lst->next)
+	{
+		++size;
+		lst = lst->next;
+	}
+	return (size);
 }

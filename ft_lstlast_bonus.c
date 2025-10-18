@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_normalize.c                                     :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/16 16:27:22 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/18 16:18:06 by tseche           ###   ########.fr       */
+/*   Created: 2025/10/18 17:02:46 by tseche            #+#    #+#             */
+/*   Updated: 2025/10/18 17:04:45 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_normalize(int n)
+t_list	*ft_lstlast(t_list *lst)
 {
-	if (n < 0)
-		return (-n);
-	return (n);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }

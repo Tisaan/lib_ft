@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_normalize.c                                     :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/16 16:27:22 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/18 16:18:06 by tseche           ###   ########.fr       */
+/*   Created: 2025/10/17 23:52:13 by tseche            #+#    #+#             */
+/*   Updated: 2025/10/18 16:18:16 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_normalize(int n)
+void	ft_putchar_fd(char c, int fd)
 {
-	if (n < 0)
-		return (-n);
-	return (n);
+	int	err;
+
+	err = (int)write(fd, (void *)&c, (size_t)1);
+	if (err == -1)
+		return ;
 }

@@ -6,15 +6,15 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 15:18:50 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/16 16:06:58 by tseche           ###   ########.fr       */
+/*   Updated: 2025/10/18 16:12:34 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	char *tmp;
+	char	*tmp;
 
 	tmp = (char *)s;
 	s += ft_strlen(s);

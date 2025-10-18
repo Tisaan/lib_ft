@@ -6,7 +6,7 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 12:23:15 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/16 16:32:16 by tseche           ###   ########.fr       */
+/*   Updated: 2025/10/18 17:03:27 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,22 @@
 
 # include <stdio.h>
 # include <stdlib.h>
+# include <limits.h>
+# include <unistd.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
+
+t_list	*ft_lstnew(void *content);
+t_list *ft_lstlast(t_list *lst);
+
+int ft_lstsize(t_list *lst);
+
+void ft_lstadd_front(t_list **lst, t_list *new);
+
 
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
@@ -25,6 +41,12 @@ int		ft_toupper(int c);
 int		ft_tolower(int c);
 
 int		ft_normalize(int n);
+int		ft_isoneof(int c, char *set);
+
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 void	ft_bzero(void *s, size_t n);
 void	ft_freeptr(void **ptr);
@@ -44,20 +66,24 @@ size_t	ft_strnlen(const char *src, size_t maxlen);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
 size_t	ft_strnumocc(char *s, char c);
 
+int		ft_strncmp(char *s1, char *s2, unsigned int n);
+
+char	*ft_itoa(int n);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strdup(const char *s);
-char	*ft_strndup(const char *s, size_t n);
+char	*ft_strndup(char *src, int start, int finish);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strcpy(char *dst, const char *src, size_t size);
 char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 
 char	**ft_split(char const *s, char c);
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n);
 int		ft_atoi(const char *str);
-int		ft_isoneof(int c, char *set);
 
 #endif

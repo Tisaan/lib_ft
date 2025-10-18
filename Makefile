@@ -6,7 +6,7 @@
 #    By: tseche <tseche@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/13 23:39:11 by tseche            #+#    #+#              #
-#    Updated: 2025/10/16 18:28:03 by tseche           ###   ########.fr        #
+#    Updated: 2025/10/18 16:49:45 by tseche           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,8 +49,26 @@ SRCS = ft_isalnum.c \
 	ft_normalize.c \
 	ft_strndup.c \
 	ft_freeptr.c \
-	
+	ft_itoa.c \
+	ft_strmapi.c \
+	ft_striteri.c \
+	ft_putchar_fd.c \
+	ft_putstr_fd.c \
+	ft_putendl_fd.c \
+	ft_putnbr_fd.c \
+
+BONUS = ft_lstnew_bonus.c \
+		ft_lstadd_front.c \
+		ft_lstsize_bonus.c \
+		ft_lstlast_bonus.c \
+		ft_lstadd_back_bonus.c \
+		ft_lstdelone_bonus.c \
+		ft_lstclear_bonus.c \
+		ft_lstiter_bonus.c \
+		ft_lstmapft_lstmap.c \
+
 OBJS = $(SRCS:.c=.o)
+OBJSB = $(BONUS:.c=.o)
 
 all: $(NAME)
 
@@ -60,6 +78,8 @@ $(NAME): $(OBJS)
 %.o : %.c
 	$(CC) $(CFLAGS) -c  $< -o $@
 
+bonus: $(OBJSB)
+	
 clean:
 	rm -rf $(OBJS)
 

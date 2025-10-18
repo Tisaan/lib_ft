@@ -6,7 +6,7 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 15:12:10 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/16 16:09:48 by tseche           ###   ########.fr       */
+/*   Updated: 2025/10/17 15:26:07 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ char	*ft_strchr(const char *s, int c)
 	}
 	while (*s)
 	{
-		if (*s == c)
+		if (*s == (char)c)
 			return ((char *)s);
 		s++;
 	}
-	if (s == NULL)
+	if (s == NULL || *s == (char)c)
 		return ((char *)s);
 	return (NULL);
 }
