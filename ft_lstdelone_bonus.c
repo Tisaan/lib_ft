@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/17 23:43:16 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/18 20:37:46 by tseche           ###   ########.fr       */
+/*   Created: 2025/10/18 18:17:45 by tseche            #+#    #+#             */
+/*   Updated: 2025/10/18 20:41:33 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-Applies the function ’f’ to each character of the
-string passed as argument, passing its index as
-the first argument. Each character is passed by
-address to ’f’ so it can be modified if necessary.
+Takes a node as parameter and frees its content
+using the function ’del’. Free the node itself but
+does NOT free the next node.
 */
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	size_t	i;
-
-	i = 0;
-	while (*s)
-		(*f)(i++, s++);
-	*s = 0;
+	if (!lst || !del)
+		return ;
+	(*del)(lst->content);
+	free(lst);
 }

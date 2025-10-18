@@ -6,12 +6,17 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 18:09:46 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/18 16:05:26 by tseche           ###   ########.fr       */
+/*   Updated: 2025/10/18 20:36:03 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+Allocates memory (using malloc(3)) and returns a
+copy of ’s1’ with characters from ’set’ removed
+from the beginning and the end.
+*/
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*ptr;

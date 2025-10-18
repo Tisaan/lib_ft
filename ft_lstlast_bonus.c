@@ -6,14 +6,19 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 17:02:46 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/18 17:04:45 by tseche           ###   ########.fr       */
+/*   Updated: 2025/10/18 20:41:05 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+Returns the last node of the list.
+*/
 t_list	*ft_lstlast(t_list *lst)
 {
+	if (!lst)
+		return (NULL);
 	while (lst->next)
 		lst = lst->next;
 	return (lst);

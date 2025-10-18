@@ -6,12 +6,16 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 00:10:21 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/18 16:18:36 by tseche           ###   ########.fr       */
+/*   Updated: 2025/10/18 20:39:15 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+Outputs the integer ’n’ to the specified file
+descriptor.
+*/
 void	ft_putnbr_fd(int nbr, int fd)
 {
 	if (nbr == -2147483648)

@@ -6,12 +6,16 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 00:02:16 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/18 16:18:25 by tseche           ###   ########.fr       */
+/*   Updated: 2025/10/18 20:38:51 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+Outputs the string ’s’ to the specified file
+descriptor.
+*/
 void	ft_putstr_fd(char *s, int fd)
 {
 	while (*s)

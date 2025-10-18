@@ -6,12 +6,19 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 16:02:46 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/18 16:08:49 by tseche           ###   ########.fr       */
+/*   Updated: 2025/10/18 20:37:21 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+Applies the function f to each character of the
+string s, passing its index as the first argument
+and the character itself as the second. A new
+string is created (using malloc(3)) to store the
+results from the successive applications of f.
+*/
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*src;

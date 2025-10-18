@@ -6,12 +6,16 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 23:52:13 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/18 16:18:16 by tseche           ###   ########.fr       */
+/*   Updated: 2025/10/18 20:38:38 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+Outputs the character ’c’ to the specified file
+descriptor.
+*/
 void	ft_putchar_fd(char c, int fd)
 {
 	int	err;

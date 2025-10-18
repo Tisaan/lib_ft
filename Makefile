@@ -6,7 +6,7 @@
 #    By: tseche <tseche@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/13 23:39:11 by tseche            #+#    #+#              #
-#    Updated: 2025/10/18 16:49:45 by tseche           ###   ########.fr        #
+#    Updated: 2025/10/18 18:49:36 by tseche           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,30 +58,31 @@ SRCS = ft_isalnum.c \
 	ft_putnbr_fd.c \
 
 BONUS = ft_lstnew_bonus.c \
-		ft_lstadd_front.c \
+		ft_lstadd_front_bonus.c \
 		ft_lstsize_bonus.c \
 		ft_lstlast_bonus.c \
 		ft_lstadd_back_bonus.c \
 		ft_lstdelone_bonus.c \
 		ft_lstclear_bonus.c \
 		ft_lstiter_bonus.c \
-		ft_lstmapft_lstmap.c \
+		ft_lstmap_bonus.c \
 
-OBJS = $(SRCS:.c=.o)
-OBJSB = $(BONUS:.c=.o)
+OBJS = $(SRCS:%.c=%.o)
+OBJSB = $(BONUS:%.c=%.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar crs $(NAME) $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 	
 %.o : %.c
-	$(CC) $(CFLAGS) -c  $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
-bonus: $(OBJSB)
+bonus: $(NAME) $(OBJS) $(OBJSB)
+	ar rcs $(NAME) $(OBJS) $(OBJSB)
 	
 clean:
-	rm -rf $(OBJS)
+	rm -rf $(OBJS) $(OBJSB)
 
 fclean: clean
 	rm -rf *.a

@@ -3,13 +3,11 @@
 
 
 # todo
-- Makefile:
-  - faire all
 - libft:
-  - faire le reste
+  - faire le reste ✓
   - cast les implicite cast
-  - ### Faire les test
-  - faire bonus
-  - ### Faire les test
+  - ### Faire les test ✓
+  - faire bonus ✓
+  - ### Faire les test ✓
   - ## Ajouter les description
-  - ## Ajouter les bonus perso dans makefile
+  - ## Ajouter les bonus perso dans makefile ✓
