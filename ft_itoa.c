@@ -12,27 +12,6 @@
 
 #include "libft.h"
 
-static int	ft_count_digits(int n)
-{
-	int	count;
-
-	if (!n)
-		return (1);
-	count = 0;
-	if (n < 0)
-	{
-		++count;
-		n *= -1;
-	}
-	while (n > 9)
-	{
-		n /= 10;
-		++count;
-	}
-	++count;
-	return (count);
-}
-
 static char	*ft_intmin(void)
 {
 	char	*str;
