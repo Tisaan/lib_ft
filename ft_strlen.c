@@ -6,13 +6,13 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 17:13:23 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/18 21:05:55 by tseche           ###   ########.fr       */
+/*   Updated: 2025/10/21 20:29:46 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 /*
-checks for any printable character including space.
+The strlen() function calculates the length of the string pointed to by s, excluding the terminating null byte ('\0').
 */
 size_t	ft_strlen(const char *src)
 {

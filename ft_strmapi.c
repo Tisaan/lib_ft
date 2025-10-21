@@ -6,7 +6,7 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 16:02:46 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/18 20:37:21 by tseche           ###   ########.fr       */
+/*   Updated: 2025/10/21 17:27:36 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*src;
 	size_t	i;
-
+	
+	if (!f)
+		return (NULL);
 	src = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!src)
 		return (NULL);

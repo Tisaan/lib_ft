@@ -6,7 +6,7 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 18:30:05 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/18 20:42:20 by tseche           ###   ########.fr       */
+/*   Updated: 2025/10/21 20:38:33 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*tmp;
 	t_list	*new;
 
+	if (!f || !del)
+		return (NULL);
 	new = NULL;
 	while (lst)
 	{
