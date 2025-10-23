@@ -19,10 +19,10 @@ string pointed to by s and never beyond s[maxlen-1].
 */
 size_t	ft_strnlen(const char *src, size_t maxlen)
 {
-	char	*sc;
-
-	sc = (char *)src;
-	while (*src && maxlen && maxlen--)
-		src++;
-	return (src - sc);
+	const char *p;
+	
+	p = memchr(s, 0, n);
+	if (p)
+		return (p - s);
+	return n;
 }

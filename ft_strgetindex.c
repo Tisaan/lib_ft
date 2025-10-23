@@ -22,6 +22,6 @@ size_t	ft_strgetindex(char *s, char *pos)
 	while (s != pos && s++ && i++)
 		;
 	if (!*s)
-		return (NULL);
+		return (0);
 	return (i);
 }
