@@ -19,9 +19,8 @@ area pointed to by s are interpreted as unsigned char.
 */
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	s = (unsigned char *)s;
-	c = (unsigned char)c;
-	while (n && *s != c && n-- && s++)
+	while (n && *(unsigned char *)s != (unsigned char)c
+		&& n-- && s++)
 		;
 	if (n)
 		return ((void *)s);

@@ -56,6 +56,7 @@ SRCS = ft_isalnum.c \
 	ft_putstr_fd.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c \
+	ft_count_digits.c \
 
 BONUS = ft_lstnew_bonus.c \
 		ft_lstadd_front_bonus.c \
