@@ -6,7 +6,7 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 14:55:58 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/18 21:38:11 by tseche           ###   ########.fr       */
+/*   Updated: 2025/10/26 14:49:45 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ string pointed to by s and never beyond s[maxlen-1].
 */
 size_t	ft_strnlen(const char *src, size_t maxlen)
 {
-	char	*sc;
+	char	*p;
 
-	sc = (char *)src;
-	while (*src && maxlen && maxlen--)
-		src++;
-	return (src - sc);
+	p = (char *)ft_memchr(src, 0, maxlen);
+	if (p)
+		return (p - src);
+	return (maxlen);
 }

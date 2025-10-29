@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_count_digits.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tseche <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/18 18:27:41 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/29 13:25:29 by tseche           ###   ########.fr       */
+/*   Created: 2025/10/19 03:44:32 by tseche            #+#    #+#             */
+/*   Updated: 2025/10/19 03:44:54 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-Iterates through the list ’lst’ and applies the
-function ’f’ to the content of each node
-*/
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+int	ft_count_digits(int n)
 {
-	while (lst && f)
+	int	count;
+
+	if (!n)
+		return (1);
+	count = 0;
+	if (n < 0)
 	{
-		(*f)(lst->content);
-		lst = lst->next;
+		++count;
+		n *= -1;
 	}
+	while (n > 9)
+	{
+		n /= 10;
+		++count;
+	}
+	++count;
+	return (count);
 }

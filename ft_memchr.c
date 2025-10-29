@@ -6,7 +6,7 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 15:34:21 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/18 16:14:00 by tseche           ###   ########.fr       */
+/*   Updated: 2025/10/29 13:31:41 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,10 @@ area pointed to by s are interpreted as unsigned char.
 */
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	if (!n)
-		return (NULL);
-	while (n--)
-	{
-		if (*(unsigned char *)s == (unsigned char)c)
-			return ((void *)s);
-		s++;
-	}
+	while (n && *(unsigned char *)s != (unsigned char)c
+		&& n-- && (unsigned char *)s++)
+		;
+	if (n)
+		return ((void *)s);
 	return (NULL);
 }

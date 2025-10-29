@@ -6,7 +6,7 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 20:36:17 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/18 20:36:24 by tseche           ###   ########.fr       */
+/*   Updated: 2025/10/29 13:34:59 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ static int	count_words(char *str, char charset)
 
 	i = 0;
 	count = 0;
+	if (!str)
+		return (0);
 	while (str[i])
 	{
 		while (str[i] == charset)
@@ -32,24 +34,15 @@ static int	count_words(char *str, char charset)
 	return (count);
 }
 
-/*
-Allocates memory (using malloc(3)) and returns an
-array of strings obtained by splitting ’s’ using
-the character ’c’ as a delimiter. The array must
-end with a NULL pointer.
-*/
-char	**ft_split(char const *str, char charset)
+static char	**ft_algo_split(char **split, char const *str
+	, char charset)
 {
-	char	**split;
-	int		start;
 	int		j;
 	int		i;
+	int		start;
 
 	i = -1;
 	j = 0;
-	split = ft_calloc(sizeof(char *), (count_words((char *)str, charset) + 1));
-	if (!split)
-		return (NULL);
 	while (str[++i])
 	{
 		if (str[i] != charset && (i == 0 || str[i - 1] == charset))
@@ -64,5 +57,24 @@ char	**ft_split(char const *str, char charset)
 			}
 		}
 	}
+	return (split);
+}
+
+/*
+Allocates memory (using malloc(3)) and returns an
+array of strings obtained by splitting ’s’ using
+the character ’c’ as a delimiter. The array must
+end with a NULL pointer.
+*/
+char	**ft_split(char const *str, char charset)
+{
+	char	**split;
+
+	if (!str)
+		return (NULL);
+	split = ft_calloc(sizeof(char *), (count_words((char *)str, charset) + 1));
+	if (!split)
+		return (NULL);
+	split = ft_algo_split(split, str, charset);
 	return (split);
 }

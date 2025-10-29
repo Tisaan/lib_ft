@@ -6,7 +6,7 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 23:43:16 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/18 20:37:46 by tseche           ###   ########.fr       */
+/*   Updated: 2025/10/28 12:53:33 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	size_t	i;
 
+	if (!s || !f)
+		return ;
 	i = 0;
 	while (*s)
 		(*f)(i++, s++);

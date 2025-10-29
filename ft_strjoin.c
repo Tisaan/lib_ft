@@ -6,7 +6,7 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 17:45:38 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/18 20:35:36 by tseche           ###   ########.fr       */
+/*   Updated: 2025/10/28 12:47:13 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*ptr;
 
+	if (!s1 || !s2)
+		return (NULL);
 	ptr = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!ptr)
 		return (NULL);

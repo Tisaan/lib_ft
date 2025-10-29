@@ -6,7 +6,7 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 16:27:22 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/18 21:18:36 by tseche           ###   ########.fr       */
+/*   Updated: 2025/10/29 13:31:57 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ return the positive form of n
 int	ft_normalizenbr(int n)
 {
 	if (n < 0)
-		return (-n);
+		return (-1);
 	return (n);
 }
