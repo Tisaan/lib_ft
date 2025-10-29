@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnumocc.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 21:10:09 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/18 21:21:50 by tseche           ###   ########.fr       */
+/*   Updated: 2025/10/29 18:35:49 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strnumocc(char *s, char c)
 
 	l = ft_strlen(s);
 	count = 0;
-	while (s && *s == c && ++count)
-		s++;
+	while (s && *s == c && ++count && s++)
+		;
 	return (count);
 }
