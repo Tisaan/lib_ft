@@ -17,11 +17,9 @@ get the number of occurence of c in s;
 size_t	ft_strnumocc(char *s, char c)
 {
 	size_t	count;
-	size_t	l;
 
-	l = ft_strlen(s);
 	count = 0;
-	while (s && *s == c && ++count)
-		s++;
+	while (*s && *s == c && ++count && s++)
+		;
 	return (count);
 }

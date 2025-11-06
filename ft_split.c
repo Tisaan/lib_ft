@@ -32,24 +32,14 @@ static int	count_words(char *str, char charset)
 	return (count);
 }
 
-/*
-Allocates memory (using malloc(3)) and returns an
-array of strings obtained by splitting ’s’ using
-the character ’c’ as a delimiter. The array must
-end with a NULL pointer.
-*/
-char	**ft_split(char const *str, char charset)
+static char	**ft_algo_split(char *str, char charset, char	**split)
 {
-	char	**split;
-	int		start;
 	int		j;
 	int		i;
+	int		start;
 
 	i = -1;
 	j = 0;
-	split = ft_calloc(sizeof(char *), (count_words((char *)str, charset) + 1));
-	if (!split)
-		return (NULL);
 	while (str[++i])
 	{
 		if (str[i] != charset && (i == 0 || str[i - 1] == charset))
@@ -64,5 +54,24 @@ char	**ft_split(char const *str, char charset)
 			}
 		}
 	}
+	return (split);
+}
+
+/*
+Allocates memory (using malloc(3)) and returns an
+array of strings obtained by splitting ’s’ using
+the character ’c’ as a delimiter. The array must
+end with a NULL pointer.
+*/
+char	**ft_split(char const *str, char charset)
+{
+	char	**split;
+
+	if (!str)
+		return (NULL);
+	split = ft_calloc(sizeof(char *), (count_words((char *)str, charset) + 1));
+	if (!split)
+		return (NULL);
+	split = ft_algo_split((char *)str, charset, split);
 	return (split);
 }
