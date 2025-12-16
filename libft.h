@@ -6,7 +6,7 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 12:23:15 by tseche            #+#    #+#             */
-/*   Updated: 2025/10/19 03:48:00 by tseche           ###   ########.fr       */
+/*   Updated: 2025/12/16 18:59:44 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <stdlib.h>
 # include <limits.h>
 # include <unistd.h>
+# include <stdarg.h>
+# include <stdint.h>
 
 typedef struct s_list
 {
@@ -91,5 +93,14 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 
 char	**ft_split(char const *s, char c);
+
+int		ft_putlnbr_fd(int nbr, int fd);
+int		ft_putnbrbase_fd(size_t nbr, char *set, size_t size);
+int		ft_convertptr(void *p);
+int		ft_putlstr_fd(char *s, int fd);
+int		ft_printf(const char *s, ...);
+int		ft_countdigitsbase(size_t n, size_t size_set);
+int		ft_putlchar(char c);
+int		conversionnbr(char c, va_list args);
 
 #endif
