@@ -6,7 +6,7 @@
 #    By: tseche <tseche@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/13 23:39:11 by tseche            #+#    #+#              #
-#    Updated: 2025/10/29 13:38:52 by tseche           ###   ########.fr        #
+#    Updated: 2025/12/13 17:27:23 by tseche           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,19 +74,19 @@ OBJSB = $(BONUS:%.c=%.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+	@ar rcs $(NAME) $(OBJS)
 	
 %.o : %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 bonus: $(NAME) $(OBJS) $(OBJSB)
-	ar rcs $(NAME) $(OBJS) $(OBJSB)
+	@ar rcs $(NAME) $(OBJS) $(OBJSB)
 	
 clean:
-	rm -rf $(OBJS) $(OBJSB)
+	@rm -rf $(OBJS) $(OBJSB)
 
 fclean: clean
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
 
 re: fclean all
 
