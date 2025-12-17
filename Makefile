@@ -6,7 +6,7 @@
 #    By: tseche <tseche@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/13 23:39:11 by tseche            #+#    #+#              #
-#    Updated: 2025/12/16 19:12:24 by tseche           ###   ########.fr        #
+#    Updated: 2025/12/17 16:55:18 by tseche           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,6 +59,8 @@ SRCS = ft_isalnum.c \
 	ft_count_digits.c \
 	ft_printf.c \
 	ft_printf_algo.c
+	ft_printf.c \
+	ft_printf_algo.c
 
 BONUS = ft_lstnew_bonus.c \
 		ft_lstadd_front_bonus.c \
@@ -77,17 +79,22 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
+	@ar rcs $(NAME) $(OBJS)
 	
 %.o : %.c
+	@$(CC) $(CFLAGS) -c $< -o $@
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 bonus: $(NAME) $(OBJS) $(OBJSB)
 	@ar rcs $(NAME) $(OBJS) $(OBJSB)
+	@ar rcs $(NAME) $(OBJS) $(OBJSB)
 	
 clean:
 	@rm -rf $(OBJS) $(OBJSB)
+	@rm -rf $(OBJS) $(OBJSB)
 
 fclean: clean
+	@rm -rf $(NAME)
 	@rm -rf $(NAME)
 
 re: fclean all
