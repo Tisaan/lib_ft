@@ -6,7 +6,7 @@
 #    By: tseche <tseche@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/13 23:39:11 by tseche            #+#    #+#              #
-#    Updated: 2025/12/13 17:27:23 by tseche           ###   ########.fr        #
+#    Updated: 2025/12/17 17:13:05 by tseche           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,10 @@ SRCS = ft_isalnum.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c \
 	ft_count_digits.c \
+	ft_printf.c \
+	ft_printf_algo.c
+	ft_printf.c \
+	ft_printf_algo.c
 
 BONUS = ft_lstnew_bonus.c \
 		ft_lstadd_front_bonus.c \
@@ -90,4 +94,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: re all clean
+.PHONY: re all clean fclean
