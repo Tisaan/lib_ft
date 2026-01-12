@@ -6,13 +6,14 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 12:02:07 by tseche            #+#    #+#             */
-/*   Updated: 2025/12/18 13:13:17 by tseche           ###   ########.fr       */
+/*   Updated: 2026/01/09 17:06:34 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "hash_map.h"
 
-static int	handle_null_entry(t_map *map, uint8_t *entry, t_probing_data *data)
+static int	handle_null_entry(t_hash_map *map,
+		uint8_t *entry, t_probing_data *data)
 {
 	if (is_null(entry + map->key_size, map->value_size))
 	{
@@ -25,7 +26,7 @@ static int	handle_null_entry(t_map *map, uint8_t *entry, t_probing_data *data)
 	return (0);
 }
 
-static uint8_t	*search_or_insert(t_map *map, void *entries,
+static uint8_t	*search_or_insert(t_hash_map *map, void *entries,
 		void *key, t_probing_data *data)
 {
 	uint8_t	*entry;
@@ -44,7 +45,7 @@ static uint8_t	*search_or_insert(t_map *map, void *entries,
 	}
 }
 
-uint8_t	*linear_probing(t_map *map, void *entries, void *key)
+uint8_t	*linear_probing(t_hash_map *map, void *entries, void *key)
 {
 	t_probing_data	data;
 
@@ -55,7 +56,7 @@ uint8_t	*linear_probing(t_map *map, void *entries, void *key)
 	return (search_or_insert(map, entries, key, &data));
 }
 
-void	map_print(t_map *map, void (*print_value)(void *))
+void	print(t_hash_map *map, void (*print_value)(void *))
 {
 	size_t	entry_size;
 	int		i;
@@ -68,7 +69,7 @@ void	map_print(t_map *map, void (*print_value)(void *))
 	first = true;
 	while (i < map->capacity)
 	{
-		entry = ((uint8_t *)map->entries) + (i++ * entry_size);
+		entry = ((uint8_t *)map->entries) + (i++ *entry_size);
 		if (!is_null(entry, map->key_size))
 		{
 			if (!first)
@@ -81,4 +82,3 @@ void	map_print(t_map *map, void (*print_value)(void *))
 	}
 	write(1, "}\n", 2);
 }
-

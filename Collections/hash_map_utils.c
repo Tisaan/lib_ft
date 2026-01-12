@@ -6,13 +6,13 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 11:33:45 by tseche            #+#    #+#             */
-/*   Updated: 2025/12/18 12:33:13 by tseche           ###   ########.fr       */
+/*   Updated: 2026/01/09 16:32:35 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "hash_map.h"
 
-bool	map_insert(t_map *map, void *key, void *value)
+bool	map_insert(t_hash_map *map, void *key, void *value)
 {
 	uint8_t	*entry;
 	bool	is_new_key;
@@ -28,7 +28,7 @@ bool	map_insert(t_map *map, void *key, void *value)
 	return (is_new_key);
 }
 
-void	*map_get(t_map *map, void *key)
+void	*map_get(t_hash_map *map, void *key)
 {
 	uint8_t	*entry;
 
@@ -40,7 +40,7 @@ void	*map_get(t_map *map, void *key)
 	return (entry + map->key_size);
 }
 
-void	map_remove(t_map *map, void *key)
+void	map_remove(t_hash_map *map, void *key)
 {
 	uint8_t	*entry;
 
@@ -52,7 +52,7 @@ void	map_remove(t_map *map, void *key)
 	ft_memset(entry + map->key_size + map->value_size - 1, 1, 1);
 }
 
-void	map_clear(t_map *map)
+void	map_clear(t_hash_map *map)
 {
 	size_t	entry_size;
 

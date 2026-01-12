@@ -6,28 +6,33 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 09:49:13 by tseche            #+#    #+#             */
-/*   Updated: 2025/12/18 12:40:59 by tseche           ###   ########.fr       */
+/*   Updated: 2026/01/09 17:24:55 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "hash_map.h"
 
-void	map_init(
-	t_map *map,
+t_hash_map	*map_init(
 	size_t key_size,
 	size_t value_size,
 	bool (*cmp)(const void *, const void *)
 	)
 {
+	t_hash_map	*map;
+
+	map = malloc(sizeof(t_hash_map));
+	if (!map)
+		return (NULL);
 	map->count = 0;
 	map->capacity = 0;
 	map->entries = NULL;
 	map->key_size = key_size;
 	map->value_size = value_size;
 	map->cmp = cmp;
+	return (map);
 }
 
-void	map_free(t_map *map)
+void	map_free(t_hash_map *map)
 {
 	free(map->entries);
 	map->count = 0;
@@ -64,7 +69,7 @@ int	grow_capacity(int current_capacity)
 	return (current_capacity);
 }
 
-int	map_size(t_map *map)
+int	map_size(t_hash_map *map)
 {
 	return (map->count);
 }

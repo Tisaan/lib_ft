@@ -6,20 +6,20 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 12:03:26 by tseche            #+#    #+#             */
-/*   Updated: 2025/12/18 12:29:39 by tseche           ###   ########.fr       */
+/*   Updated: 2026/01/09 16:29:09 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "hash_map.h"
 
-static void	update_map(t_map *map, uint8_t *new_entries, int new_capacity)
+static void	update_map(t_hash_map *map, uint8_t *new_entries, int new_capacity)
 {
 	free(map->entries);
 	map->entries = new_entries;
 	map->capacity = new_capacity;
 }
 
-static void	copy_entry(t_map *map, uint8_t *new_entries,
+static void	copy_entry(t_hash_map *map, uint8_t *new_entries,
 		uint8_t *old_entry)
 {
 	uint8_t	*dest;
@@ -31,7 +31,7 @@ static void	copy_entry(t_map *map, uint8_t *new_entries,
 }
 
 static void	reinsert_entries(
-	t_map *map,
+	t_hash_map *map,
 	uint8_t *new_entries,
 	size_t entry_size
 )
@@ -60,7 +60,7 @@ static uint8_t	*allocate_and_init_entries(int capacity, size_t entry_size)
 	return (new_entries);
 }
 
-void	adjust_array(t_map *map)
+void	adjust_array(t_hash_map *map)
 {
 	int		new_capacity;
 	size_t	entry_size;
@@ -74,4 +74,3 @@ void	adjust_array(t_map *map)
 	reinsert_entries(map, new_entries, entry_size);
 	update_map(map, new_entries, new_capacity);
 }
-

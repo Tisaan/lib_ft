@@ -6,13 +6,13 @@
 #    By: tseche <tseche@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/13 23:39:11 by tseche            #+#    #+#              #
-#    Updated: 2025/12/18 13:20:28 by tseche           ###   ########.fr        #
+#    Updated: 2026/01/10 18:24:58 by tseche           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = libft.a
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g
 CC	= cc
 SRCS = ft_isalnum.c \
 	ft_isalpha.c \
@@ -35,6 +35,7 @@ SRCS = ft_isalnum.c \
 	ft_memcmp.c \
 	ft_strnstr.c \
 	ft_atoi.c \
+	ft_atol.c \
 	ft_calloc.c \
 	ft_strdup.c \
 	ft_substr.c \
@@ -57,6 +58,11 @@ SRCS = ft_isalnum.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c \
 	ft_count_digits.c \
+	ft_has_digits.c \
+	ft_is_diff_than.c \
+	ft_join_av.c \
+	ft_realloc.c \
+	ft_skip_pattern.c \
 	ft_printf.c \
 	ft_printf_algo.c \
 	./Collections/hash_map_grow.c \

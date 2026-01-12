@@ -6,7 +6,7 @@
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 12:23:15 by tseche            #+#    #+#             */
-/*   Updated: 2025/12/16 18:59:44 by tseche           ###   ########.fr       */
+/*   Updated: 2026/01/08 18:04:44 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ void	ft_putnbr_fd(int n, int fd);
 void	ft_bzero(void *s, size_t n);
 void	ft_freeptr(void **ptr);
 
+void	*ft_realloc(void *p, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memcpyrev(void *dest, const void *src, size_t n);
@@ -76,8 +77,15 @@ size_t	ft_strnumocc(char *s, char c);
 
 int		ft_strncmp(char *s1, char *s2, unsigned int n);
 
+long	ft_atol(const char *str);
 int		ft_atoi(const char *str);
+int		is_diff_than(char *s, char *p);
+int		skip_pattern(char *s, char *pattern);
+int		skip_spaces(char *s);
+int		skip_digits(char *s);
+int		has_digits(char *s);
 
+char	*join_av(int ac, char **av);
 char	*ft_itoa(int n);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);

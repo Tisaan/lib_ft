@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 17:54:23 by tseche            #+#    #+#             */
-/*   Updated: 2026/01/10 18:30:22 by tseche           ###   ########.fr       */
+/*   Created: 2025/11/23 17:54:00 by tseche            #+#    #+#             */
+/*   Updated: 2026/01/08 18:04:16 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-/*
-The  memcpy()  function  copies  n bytes from memory area src to memory area
-dest in ascending order.  The memory areas must not overlap.
-Use memmove(3) if the memory  areas do overlap.
-*/
-void	*ft_memcpy(void *dest, const void *src, size_t n)
-{
-	unsigned char	*ret;
+#include "./libft.h"
 
-	ret = dest;
-	while (n--)
-		*(unsigned char *)dest++ = *(unsigned char *)src++;
-	return (ret);
+long	ft_atol(const char *str)
+{
+	int		i;
+	int		sign;
+	long	res;
+
+	res = 0;
+	i = 0;
+	sign = 1;
+	i += skip_spaces((char *)str);
+	if (str[i] && (str[i] == '+' || str[i] == '-'))
+	{
+		if (str[i] == '-')
+			sign *= -1;
+		i++;
+	}
+	i += skip_spaces((char *)str);
+	while (str[i] && (str[i] >= '0' && str[i] <= '9'))
+		res = (res * 10) + (str[i++] - '0');
+	return (res * sign);
 }

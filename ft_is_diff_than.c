@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_is_diff_than.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 17:54:23 by tseche            #+#    #+#             */
-/*   Updated: 2026/01/10 18:30:22 by tseche           ###   ########.fr       */
+/*   Created: 2025/11/24 14:42:10 by tseche            #+#    #+#             */
+/*   Updated: 2026/01/08 18:02:12 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-/*
-The  memcpy()  function  copies  n bytes from memory area src to memory area
-dest in ascending order.  The memory areas must not overlap.
-Use memmove(3) if the memory  areas do overlap.
-*/
-void	*ft_memcpy(void *dest, const void *src, size_t n)
-{
-	unsigned char	*ret;
+#include "./libft.h"
 
-	ret = dest;
-	while (n--)
-		*(unsigned char *)dest++ = *(unsigned char *)src++;
-	return (ret);
+int	is_diff_than(char *s, char *p)
+{
+	if (!s || !*s)
+		return (1);
+	while (*s)
+	{
+		if (!ft_strchr(p, *s++))
+			return (0);
+	}
+	return (1);
 }

@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tseche <tseche@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 17:54:23 by tseche            #+#    #+#             */
-/*   Updated: 2026/01/10 18:30:22 by tseche           ###   ########.fr       */
+/*   Created: 2025/11/18 20:10:58 by tseche            #+#    #+#             */
+/*   Updated: 2026/01/10 18:21:55 by tseche           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-/*
-The  memcpy()  function  copies  n bytes from memory area src to memory area
-dest in ascending order.  The memory areas must not overlap.
-Use memmove(3) if the memory  areas do overlap.
-*/
-void	*ft_memcpy(void *dest, const void *src, size_t n)
-{
-	unsigned char	*ret;
+#include "./libft.h"
 
-	ret = dest;
-	while (n--)
-		*(unsigned char *)dest++ = *(unsigned char *)src++;
-	return (ret);
+void	*ft_realloc(void *p, size_t n)
+{
+	void	*ptr;
+
+	ptr = malloc(n);
+	if (!ptr)
+		return (NULL);
+	if (p && *(unsigned char *)p)
+		ft_memcpy(ptr, p, n);
+	free(p);
+	return (ptr);
 }
