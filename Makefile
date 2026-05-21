@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tseche <tseche@student.42.fr>              +#+  +:+       +#+         #
+#    By: von <von@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/13 23:39:11 by tseche            #+#    #+#              #
-#    Updated: 2026/01/12 16:49:44 by tseche           ###   ########.fr        #
+#    Updated: 2026/05/22 01:12:07 by von              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@
 NAME = libft.a
 CFLAGS = -Wall -Werror -Wextra -g
 CC	= cc
+
 SRCS = ft_isalnum.c \
 	ft_isalpha.c \
 	ft_isdigit.c \
@@ -64,7 +65,7 @@ SRCS = ft_isalnum.c \
 	ft_realloc.c \
 	ft_skip_pattern.c \
 	ft_printf.c \
-	ft_printf_algo.c
+	ft_printf_algo.c \
 
 BONUS = ft_lstnew_bonus.c \
 		ft_lstadd_front_bonus.c \
